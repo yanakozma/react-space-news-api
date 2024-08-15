@@ -20,7 +20,10 @@ const [newsList, setNewsList] = useState([])
       <div className="newsContainer">
       {newsList.map((val, idx) => {
           return (
-          <div key={idx} className="article">
+          <div 
+          key={idx} 
+          className="article" 
+          onClick={() => {window.location.href = val.url}}>
             <h3>{val.title}</h3>
             <img src={val.image_url} alt="" />
             <p>{val.summary}</p>
