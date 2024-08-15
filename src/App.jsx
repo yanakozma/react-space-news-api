@@ -19,8 +19,15 @@ const [newsList, setNewsList] = useState([])
       </div>
       <div className="newsContainer">
       {newsList.map((val, idx) => {
-          return <div key={idx}>{val.title}</div>
-        })}
+          return (
+          <div key={idx} className="article">
+            <h3>{val.title}</h3>
+            <img src={val.image_url} alt="" />
+            <p>{val.summary}</p>
+            <h4>{val.published_at}</h4>
+            </div>
+          );
+        })};
       </div>
     </div>
   )
